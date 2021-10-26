@@ -69,4 +69,9 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		return entrepriseRepoistory.findById(entrepriseId).get();	
 	}
 
+	public List<Entreprise> getAllEntreprises() {
+		List<Entreprise> entrepriseList = new ArrayList<>();
+		entrepriseRepoistory.findAll().forEach(entrepriseList::add);
+		return entrepriseList;	}
+
 }
