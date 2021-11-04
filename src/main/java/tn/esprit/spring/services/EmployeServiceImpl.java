@@ -32,10 +32,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	@Autowired
 	TimesheetRepository timesheetRepository;
 
-	@Override
-	public Employe authenticate(String login) {
-		return employeRepository.getEmployeByEmail(login);
-	}
+
 
 	@Override
 	public int addOrUpdateEmploye(Employe employe) {
@@ -194,8 +191,7 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public Employe authenticate(String login, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		return employeRepository.getEmployeByEmailAndPassword(login, password);
 	}
 
 }
