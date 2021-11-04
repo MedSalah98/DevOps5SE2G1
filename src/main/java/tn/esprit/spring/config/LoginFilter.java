@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import tn.esprit.spring.controller.ControllerEmployeImpl;
 
 
+
 public class LoginFilter implements Filter {
 
 	@Override
@@ -21,8 +22,7 @@ public class LoginFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
 
-		ControllerEmployeImpl employeController = 
-				(ControllerEmployeImpl) httpServletRequest.getSession().getAttribute("employeController");
+		ControllerEmployeImpl employeController = (ControllerEmployeImpl) httpServletRequest.getSession().getAttribute("employeController");
 
 		if (employeController!=null && employeController.getAuthenticatedUser() != null && employeController.getLoggedIn()) 
 		{ filterChain.doFilter(servletRequest, servletResponse);} 

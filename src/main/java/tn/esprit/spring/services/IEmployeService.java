@@ -51,6 +51,5 @@ public interface IEmployeService {
 	int addOrUpdateEmploye(Employe employe);
 
 
-	public Employe authenticate(String login);
 
 }
