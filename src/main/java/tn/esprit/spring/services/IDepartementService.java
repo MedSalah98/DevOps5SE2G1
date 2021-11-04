@@ -8,7 +8,7 @@ import tn.esprit.spring.entities.Departement;
 public interface IDepartementService {
 	
 	
-	public List<Departement> getAllDepartements();
+	
 
 	void deleteDepartementById(int departementId);
 
@@ -16,13 +16,15 @@ public interface IDepartementService {
 
 	void deleteAllDepartements();
 
-	String addDepartement(Departement d);
+	
 
-	List<Departement> retrieveAllDepartement();
+	
 
 	int ajouterDepartement(Departement departement);
 
 	String getDepartementNameById(int departementId);
+
+	Departement getDepartementById(int departementId);
 
 
 	

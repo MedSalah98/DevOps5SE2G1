@@ -8,12 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Departement;
+import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
+import tn.esprit.spring.repository.EntrepriseRepository;
 
 @Service
 public class DepartementServiceImpl implements IDepartementService {
+
+
 	@Autowired
 	DepartementRepository departementRepository;
+	@Autowired
+	EntrepriseRepository entrepriseRepoistory;
+	
 	private static final Logger L = LogManager.getLogger(DepartementServiceImpl.class);
 	
 	@Override
@@ -28,6 +35,12 @@ public class DepartementServiceImpl implements IDepartementService {
 		return dep.getName();
 	}
 
+	@Override
+	public Departement getDepartementById(int departementId) {
+		Departement dep = departementRepository.findById(departementId).get();
+		return dep;
+	}
+	
 	@Override
 	public List<Departement> getAllDepartement() {
 		return (List<Departement>) departementRepository.findAll();
@@ -46,31 +59,15 @@ public class DepartementServiceImpl implements IDepartementService {
 		
 	}
 
-	@Override
-	public String addDepartement(Departement d) {
-		departementRepository.save(d);
-		return"done";
-	}
 
-	@Override
-	public List<Departement> retrieveAllDepartement() {
-		List<Departement> departement = (List<Departement>) departementRepository.findAll();
+	
 
-		for (Departement d : departement){
-			L.info("d +++ :" + d);
-		}
-		return departement;
+	
 
-	}
 
-	@Override
-	public List<Departement> getAllDepartements() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	
-	
+
 	
 	
 }
