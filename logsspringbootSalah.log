@@ -1,0 +1,462 @@
+2021-11-12 13:05:11.191  INFO 18896 --- [main] tn.esprit.spring.TimesheetApplication    : Starting TimesheetApplication on DESKTOP-IRI2KI6 with PID 18896 (C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master\target\classes started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:05:11.207  INFO 18896 --- [main] tn.esprit.spring.TimesheetApplication    : No active profile set, falling back to default profiles: default
+2021-11-12 13:05:12.958  INFO 18896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-12 13:05:12.972  INFO 18896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-11-12 13:05:13.160  INFO 18896 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-12 13:05:13.373  INFO 18896 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:05:13.467  INFO 18896 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:05:13.639  INFO 18896 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:05:13.994 ERROR 18896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLSyntaxErrorException: Base 'timesheet-spring' inconnue
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1214) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1245) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at tn.esprit.spring.TimesheetApplication.main(TimesheetApplication.java:15) ~[classes/:na]
+
+2021-11-12 13:05:13.999  WARN 18896 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : Base 'timesheet-spring' inconnue
+2021-11-12 13:05:14.000  INFO 18896 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:05:15.000 ERROR 18896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLSyntaxErrorException: Base 'timesheet-spring' inconnue
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249) [hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at tn.esprit.spring.TimesheetApplication.main(TimesheetApplication.java:15) ~[classes/:na]
+
+2021-11-12 13:05:15.004  WARN 18896 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1049, SQLState: 42000
+2021-11-12 13:05:15.004 ERROR 18896 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Base 'timesheet-spring' inconnue
+2021-11-12 13:05:15.004  WARN 18896 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+2021-11-12 13:05:15.004  INFO 18896 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-12 13:05:15.035 ERROR 18896 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at tn.esprit.spring.TimesheetApplication.main(TimesheetApplication.java:15) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:69) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 20 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Base 'timesheet-spring' inconnue
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	... 37 common frames omitted
+
+2021-11-12 13:07:07.142  INFO 16000 --- [main] tn.esprit.spring.TimesheetApplication    : Starting TimesheetApplication on DESKTOP-IRI2KI6 with PID 16000 (C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master\target\classes started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:07:07.142  INFO 16000 --- [main] tn.esprit.spring.TimesheetApplication    : No active profile set, falling back to default profiles: default
+2021-11-12 13:07:08.925  INFO 16000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-12 13:07:08.930  INFO 16000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-11-12 13:07:09.088  INFO 16000 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-12 13:07:09.291  INFO 16000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:07:09.385  INFO 16000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:07:09.541  INFO 16000 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:07:09.963  INFO 16000 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:07:19.936  INFO 16000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:07:19.968  WARN 16000 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'controllerEntrepriseImpl': Unsatisfied dependency expressed through field 'iemployeservice'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'tn.esprit.spring.services.IEmployeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-11-12 13:07:19.973  INFO 16000 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-12 13:07:20.176 ERROR 16000 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field iemployeservice in tn.esprit.spring.controller.ControllerEntrepriseImpl required a bean of type 'tn.esprit.spring.services.IEmployeService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'tn.esprit.spring.services.IEmployeService' in your configuration.
+
+2021-11-12 13:08:32.748  INFO 17388 --- [main] tn.esprit.spring.TimesheetApplication    : Starting TimesheetApplication on DESKTOP-IRI2KI6 with PID 17388 (C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master\target\classes started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:08:32.748  INFO 17388 --- [main] tn.esprit.spring.TimesheetApplication    : No active profile set, falling back to default profiles: default
+2021-11-12 13:08:34.473  INFO 17388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-12 13:08:34.486  INFO 17388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-11-12 13:08:34.676  INFO 17388 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-12 13:08:34.879  INFO 17388 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:08:34.968  INFO 17388 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:08:35.140  INFO 17388 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:08:35.500  INFO 17388 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:08:36.897  INFO 17388 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:08:36.924  WARN 17388 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'controllerEntrepriseImpl': Unsatisfied dependency expressed through field 'iemployeservice'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'tn.esprit.spring.services.IEmployeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-11-12 13:08:36.940  INFO 17388 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-12 13:08:37.108 ERROR 17388 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field iemployeservice in tn.esprit.spring.controller.ControllerEntrepriseImpl required a bean of type 'tn.esprit.spring.services.IEmployeService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'tn.esprit.spring.services.IEmployeService' in your configuration.
+
+2021-11-12 13:10:39.771  INFO 16992 --- [main] tn.esprit.spring.TimesheetApplication    : Starting TimesheetApplication on DESKTOP-IRI2KI6 with PID 16992 (C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master\target\classes started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:10:39.786  INFO 16992 --- [main] tn.esprit.spring.TimesheetApplication    : No active profile set, falling back to default profiles: default
+2021-11-12 13:10:41.532  INFO 16992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-12 13:10:41.534  INFO 16992 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2021-11-12 13:10:41.662  INFO 16992 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-11-12 13:10:41.883  INFO 16992 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:10:41.977  INFO 16992 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:10:42.133  INFO 16992 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:10:42.555  INFO 16992 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:10:43.693  INFO 16992 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:10:44.161  WARN 16992 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 13:10:44.989  INFO 16992 --- [main] tn.esprit.spring.TimesheetApplication    : Started TimesheetApplication in 5.811 seconds (JVM running for 7.804)
+2021-11-12 13:16:36.416  INFO 7044 --- [main] tn.esprit.spring.DepartementTest         : Starting DepartementTest on DESKTOP-IRI2KI6 with PID 7044 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:16:36.416  INFO 7044 --- [main] tn.esprit.spring.DepartementTest         : No active profile set, falling back to default profiles: default
+2021-11-12 13:16:47.934  INFO 7044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:16:48.121  INFO 7044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:16:49.377  INFO 7044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:16:52.373  INFO 7044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:16:57.377  INFO 7044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:16:58.967  WARN 7044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 13:17:02.843  INFO 7044 --- [main] tn.esprit.spring.DepartementTest         : Started DepartementTest in 27.74 seconds (JVM running for 32.886)
+2021-11-12 13:17:04.437  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 1093 milliseconds.
+2021-11-12 13:17:04.437  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Delete Departement works
+2021-11-12 13:17:04.702  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 156 milliseconds.
+2021-11-12 13:17:04.702  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Add Departement works
+2021-11-12 13:17:04.827  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 93 milliseconds.
+2021-11-12 13:17:04.827  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement name by id works
+2021-11-12 13:17:04.937  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 94 milliseconds.
+2021-11-12 13:17:04.937  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement by id works
+2021-11-12 13:17:05.322  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 370 milliseconds.
+2021-11-12 13:17:05.322  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Update Departement works
+2021-11-12 13:17:05.610  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 272 milliseconds.
+2021-11-12 13:17:05.610  INFO 7044 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get ALLDepartement works
+2021-11-12 13:17:05.641  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:17:05.751  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 13:17:05.751  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 13:17:05.782  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@31f5b923
+2021-11-12 13:17:05.782  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 13:17:05.798  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@2acb1264
+2021-11-12 13:17:05.798  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 13:17:05.813  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 13:17:05.813  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 13:17:05.860 ERROR 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Error in deleteTimesheet() : org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Timesheet entity with id 2 exists!
+2021-11-12 13:17:05.860  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 13:17:05.860  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 13:17:05.876  INFO 7044 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:17:06.621 ERROR 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : null
+2021-11-12 13:17:06.840  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%size) works
+2021-11-12 13:17:06.965  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%existence) works
+2021-11-12 13:17:07.074  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Entreprise by id works
+2021-11-12 13:17:07.183  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Add Entreprise works
+2021-11-12 13:17:07.357  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Update Entreprise works
+2021-11-12 13:17:07.919  INFO 7044 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Names of Departments by Entreprise works
+2021-11-12 13:18:18.124  INFO 1116 --- [main] tn.esprit.spring.DepartementTest         : Starting DepartementTest on DESKTOP-IRI2KI6 with PID 1116 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:18:18.124  INFO 1116 --- [main] tn.esprit.spring.DepartementTest         : No active profile set, falling back to default profiles: default
+2021-11-12 13:18:22.484  INFO 1116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:18:22.828  INFO 1116 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:18:23.219  INFO 1116 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:18:24.787  INFO 1116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:18:26.653  INFO 1116 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:18:28.095  WARN 1116 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 13:18:30.722  INFO 1116 --- [main] tn.esprit.spring.DepartementTest         : Started DepartementTest in 13.506 seconds (JVM running for 16.213)
+2021-11-12 13:18:31.395  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 477 milliseconds.
+2021-11-12 13:18:31.395  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Delete Departement works
+2021-11-12 13:18:31.535  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 125 milliseconds.
+2021-11-12 13:18:31.535  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Add Departement works
+2021-11-12 13:18:31.738  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 171 milliseconds.
+2021-11-12 13:18:31.738  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement name by id works
+2021-11-12 13:18:31.884  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 138 milliseconds.
+2021-11-12 13:18:31.884  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement by id works
+2021-11-12 13:18:32.040  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 141 milliseconds.
+2021-11-12 13:18:32.040  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Update Departement works
+2021-11-12 13:18:32.384  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 328 milliseconds.
+2021-11-12 13:18:32.384  INFO 1116 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get ALLDepartement works
+2021-11-12 13:18:32.431  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:18:32.493  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 13:18:32.493  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 3
+2021-11-12 13:18:32.509  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@15d58530
+2021-11-12 13:18:32.509  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 13:18:32.524  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@56299b0e
+2021-11-12 13:18:32.524  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 13:18:32.540  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 13:18:32.540  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 13:18:32.681  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Out deleteTimesheet() :
+2021-11-12 13:18:32.681  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 13:18:32.681  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 13:18:32.696  INFO 1116 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:18:33.259 ERROR 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : null
+2021-11-12 13:18:33.504  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%size) works
+2021-11-12 13:18:33.739  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%existence) works
+2021-11-12 13:18:33.812  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Entreprise by id works
+2021-11-12 13:18:33.924  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Add Entreprise works
+2021-11-12 13:18:34.159  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Update Entreprise works
+2021-11-12 13:18:34.534  INFO 1116 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Names of Departments by Entreprise works
+2021-11-12 13:19:31.727  INFO 4820 --- [main] tn.esprit.spring.DepartementTest         : Starting DepartementTest on DESKTOP-IRI2KI6 with PID 4820 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:19:31.727  INFO 4820 --- [main] tn.esprit.spring.DepartementTest         : No active profile set, falling back to default profiles: default
+2021-11-12 13:19:36.284  INFO 4820 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:19:36.487  INFO 4820 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:19:36.847  INFO 4820 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:19:38.437  INFO 4820 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:19:40.299  INFO 4820 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:19:41.688  WARN 4820 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 13:19:44.083  INFO 4820 --- [main] tn.esprit.spring.DepartementTest         : Started DepartementTest in 13.261 seconds (JVM running for 16.181)
+2021-11-12 13:19:44.710  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 407 milliseconds.
+2021-11-12 13:19:44.710  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Delete Departement works
+2021-11-12 13:19:44.820  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 94 milliseconds.
+2021-11-12 13:19:44.820  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Add Departement works
+2021-11-12 13:19:44.898  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 78 milliseconds.
+2021-11-12 13:19:44.898  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement name by id works
+2021-11-12 13:19:45.007  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 94 milliseconds.
+2021-11-12 13:19:45.007  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get Departement by id works
+2021-11-12 13:19:45.195  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 188 milliseconds.
+2021-11-12 13:19:45.195  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Update Departement works
+2021-11-12 13:19:45.491  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Method execution time: 281 milliseconds.
+2021-11-12 13:19:45.491  INFO 4820 --- [Time-limited test] t.e.s.services.DepartementServiceImpl    : Get ALLDepartement works
+2021-11-12 13:19:45.533  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:19:45.595  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 13:19:45.595  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 5
+2021-11-12 13:19:45.595  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@18cbc3c2
+2021-11-12 13:19:45.611  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 13:19:45.611  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@75e4fe3c
+2021-11-12 13:19:45.627  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 13:19:45.642  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 13:19:45.642  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 13:19:45.658 ERROR 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Error in deleteTimesheet() : org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Timesheet entity with id 2 exists!
+2021-11-12 13:19:45.658  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 13:19:45.674  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 13:19:45.674  INFO 4820 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:19:46.170 ERROR 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : null
+2021-11-12 13:19:46.401  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%size) works
+2021-11-12 13:19:46.557  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Delete Entreprise (%existence) works
+2021-11-12 13:19:46.651  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Entreprise by id works
+2021-11-12 13:19:46.729  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Add Entreprise works
+2021-11-12 13:19:46.870  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Update Entreprise works
+2021-11-12 13:19:47.307  INFO 4820 --- [main] t.e.spring.EntrepriseServiceImplTest     : Get Names of Departments by Entreprise works
+2021-11-12 13:20:59.991  INFO 11908 --- [main] t.e.spring.TimesheetServiceImplTest      : Starting TimesheetServiceImplTest on DESKTOP-IRI2KI6 with PID 11908 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 13:21:00.007  INFO 11908 --- [main] t.e.spring.TimesheetServiceImplTest      : No active profile set, falling back to default profiles: default
+2021-11-12 13:21:04.108  INFO 11908 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 13:21:04.327  INFO 11908 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 13:21:04.823  INFO 11908 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 13:21:06.414  INFO 11908 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 13:21:08.243  INFO 11908 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 13:21:09.751  WARN 11908 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 13:21:12.186  INFO 11908 --- [main] t.e.spring.TimesheetServiceImplTest      : Started TimesheetServiceImplTest in 13.118 seconds (JVM running for 15.581)
+2021-11-12 13:21:12.436  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 13:21:12.686  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 13:21:12.686  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 6
+2021-11-12 13:21:12.766  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@77cc6a28
+2021-11-12 13:21:12.797  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 13:21:12.797  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@511d5e6e
+2021-11-12 13:21:12.813  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 13:21:12.922  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 13:21:12.938  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 13:21:12.969 ERROR 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Error in deleteTimesheet() : org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Timesheet entity with id 2 exists!
+2021-11-12 13:21:12.969  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 13:21:12.969  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 13:21:12.984  INFO 11908 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 14:18:22.110  INFO 17604 --- [main] t.e.spring.TimesheetServiceImplTest      : Starting TimesheetServiceImplTest on DESKTOP-IRI2KI6 with PID 17604 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 14:18:22.110  INFO 17604 --- [main] t.e.spring.TimesheetServiceImplTest      : No active profile set, falling back to default profiles: default
+2021-11-12 14:18:32.359  INFO 17604 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 14:18:33.062  INFO 17604 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 14:18:34.928  INFO 17604 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 14:18:38.488  INFO 17604 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 14:18:43.632  INFO 17604 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 14:18:46.332  WARN 17604 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 14:18:51.001  INFO 17604 --- [main] t.e.spring.TimesheetServiceImplTest      : Started TimesheetServiceImplTest in 32.378 seconds (JVM running for 39.273)
+2021-11-12 14:18:51.517  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 14:18:52.240  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 14:18:52.240  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 7
+2021-11-12 14:18:52.350  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@77020328
+2021-11-12 14:18:52.365  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 14:18:52.381  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@1eb6037d
+2021-11-12 14:18:52.381  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 14:18:52.553  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 14:18:52.568  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 14:18:52.584 ERROR 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Error in deleteTimesheet() : org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Timesheet entity with id 2 exists!
+2021-11-12 14:18:52.584  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 14:18:52.584  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 14:18:52.600  INFO 17604 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 14:39:13.228  INFO 15060 --- [main] t.e.spring.TimesheetServiceImplTest      : Starting TimesheetServiceImplTest on DESKTOP-IRI2KI6 with PID 15060 (started by PC-ASUS in C:\Users\PC-ASUS\Documents\workspace-sts-3.8.4.RELEASE\DevOps5SE2G1-master)
+2021-11-12 14:39:13.244  INFO 15060 --- [main] t.e.spring.TimesheetServiceImplTest      : No active profile set, falling back to default profiles: default
+2021-11-12 14:39:22.620  INFO 15060 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-12 14:39:22.823  INFO 15060 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2021-11-12 14:39:23.236  INFO 15060 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-11-12 14:39:27.434  INFO 15060 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-11-12 14:39:31.338  INFO 15060 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-12 14:39:34.143  WARN 15060 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-12 14:39:37.359  INFO 15060 --- [main] t.e.spring.TimesheetServiceImplTest      : Started TimesheetServiceImplTest in 26.456 seconds (JVM running for 38.99)
+2021-11-12 14:39:37.593  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 14:39:40.803  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Out ajouterTimesheet() : 
+2021-11-12 14:39:40.803  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 8
+2021-11-12 14:39:41.084  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@407f2029
+2021-11-12 14:39:41.100  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 1
+2021-11-12 14:39:41.115  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : tn.esprit.spring.entities.Timesheet@2444c3df
+2021-11-12 14:39:41.115  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : In retrieveAllTimesheet() : 
+2021-11-12 14:39:41.226  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Out of retrieveAllTimesheet() : 
+2021-11-12 14:39:41.226  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : In deleteTimesheet() :
+2021-11-12 14:39:41.257 ERROR 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Error in deleteTimesheet() : org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Timesheet entity with id 2 exists!
+2021-11-12 14:39:41.257  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : in  retrieveTimesheet id = 2
+2021-11-12 14:39:41.257  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : Timesheet returned : null
+2021-11-12 14:39:41.273  INFO 15060 --- [main] t.e.s.services.TimesheetServiceImpl      : In ajouterTimesheet() : 
+2021-11-12 15:22:58.879  WARN 16992 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m12s555ms149µs800ns).
