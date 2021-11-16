@@ -1,4 +1,4 @@
-pipeline {
+  pipeline {
 environment {
                     registry = "medsalah98/test1"
                     registryCredential = 'DockerCredentials'
@@ -26,8 +26,7 @@ stage("Code Quality") {
 stage("Clean- Package"){
     steps {
        
-        bat "mvn clean package"}
-}
+        bat "mvn clean package"}   
 stage("DEPLOY with Nexus") {
     steps {
         bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.0.jar"
