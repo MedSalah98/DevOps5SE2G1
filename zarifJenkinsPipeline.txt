@@ -1,0 +1,52 @@
+    pipeline {
+environment {
+                    registry = "medsalah98/test1"
+                    registryCredential = 'DockerCredentials'
+                    dockerImage = '' }
+    agent any
+stages {
+stage("Cloning Project from Git") {
+        steps {
+git credentialsId: 'GitCredentials', url: 'https://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@github.com/MedSalah98/DevOps5SE2G1'
+}}
+stage("Build") {
+    steps {
+ 
+        bat "mvn compile"}
+}
+stage("Unit tests") {
+    steps {
+        bat "mvn test"}
+}
+stage("Code Quality") {
+    steps {
+      
+        bat "mvn sonar:sonar"}
+}
+stage("Clean- Package"){
+    steps {
+       
+        bat "mvn clean package"}
+}
+stage("DEPLOY with Nexus") {
+    steps {
+        bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.0.jar"
+        }
+}
+
+    stage("Docker : Build image") {
+                steps {
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                    
+                }
+                }
+    }
+stage("Docker : Push image") {
+steps {
+    script {
+          docker.withRegistry( '', registryCredential ) { dockerImage.push() }
+    
+    }}
+}
+}}
