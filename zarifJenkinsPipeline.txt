@@ -1,4 +1,4 @@
-     pipeline {
+pipeline {
 environment {
                     registry = "medsalah98/test1"
                     registryCredential = 'DockerCredentials'
@@ -7,7 +7,7 @@ environment {
 stages {
 stage("Cloning Project from Git") {
         steps {
-git credentialsId: 'GitCredentials', url: 'https://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@github.com/MedSalah98/DevOps5SE2G1'
+git credentialsId: 'GitCredentials', url: 'https://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@github.com/MedSalah98/DevOps5SE2G1'
 }}
 stage("Build") {
     steps {
@@ -26,7 +26,8 @@ stage("Code Quality") {
 stage("Clean- Package"){
     steps {
        
-        bat "mvn clean package"}   
+        bat "mvn clean package"}
+}
 stage("DEPLOY with Nexus") {
     steps {
         bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.0.jar"
@@ -48,4 +49,19 @@ steps {
     
     }}
 }
-}}
+
+}
+
+
+
+post {
+         failure {  
+             mail bcc: '', body: 'error text', cc: '', from: '', replyTo: '', subject: 'failure', to: 'zarifmohamedsalah@gmail.com'         
+         }
+         success{  
+             mail bcc: '', body: 'success text', cc: '', from: '', replyTo: '', subject: 'success', to: 'zarifmohamedsalah@gmail.com'         
+         }
+     }
+
+
+}
