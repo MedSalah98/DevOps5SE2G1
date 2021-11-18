@@ -1,4 +1,4 @@
-pipeline {
+pipeline   {
 environment   {
                     registry = "medsalah98/test1"
                     registryCredential = 'DockerCredentials'
