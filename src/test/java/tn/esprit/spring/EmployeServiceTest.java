@@ -8,6 +8,9 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
@@ -50,6 +53,9 @@ public class EmployeServiceTest {
 	List<Employe> MesEmployes;
 	
 	
+	private static final Logger L = LogManager.getLogger();
+	
+	
 	
 	
 	// Service Layer Tests
@@ -58,27 +64,51 @@ public class EmployeServiceTest {
 	@Order(1)
 	public void test_getAllEmployes() {
 		
-		List<Employe> MesEmployes= new ArrayList<Employe>();
+		try {List<Employe> MesEmployes= new ArrayList<Employe>();
 		
 		MesEmployes.add(new Employe(1,"oussama","issaoui","oussama.issaoui1@esprit.tn","passw",true,Role.CHEF_DEPARTEMENT));
 		
 		MesEmployes.add(new Employe(2,"oussama2","issaoui2","oussama.issaoui2@esprit.tn","passw2",true,Role.TECHNICIEN));
 		
+		L.log(Level.DEBUG, () ->"creation de la liste");
+		
 		when(EmplRepo.findAll()).thenReturn(MesEmployes);
 		
 		assertEquals(2,EmplSrvImpl.getAllEmployes().size());
+		
+		L.log(Level.INFO, () ->"Le nombe d'employés est"+EmplSrvImpl.getAllEmployes().size());}
+		
+		catch(Exception e) {
+			L.log(Level.WARN, () ->"Il n'y a aucun employé enregistré");
+		}
+		
+		
 	}
 	
 	@Test
 	@Order(2)
 	public void test_addOrUpdateEmployee() {
 		
-		Employe employe = new Employe(1,"oussama","issaoui","oussama.issaoui1@esprit.tn","passw",true,Role.CHEF_DEPARTEMENT);
+		try {
+			Employe employe = new Employe(1,"oussama","issaoui","oussama.issaoui1@esprit.tn","passw",true,Role.CHEF_DEPARTEMENT);
+			
+			L.log(Level.DEBUG, () ->"creation de la liste");
+			
+			when(EmplRepo.save(employe)).thenReturn(employe);
+			EmplSrvImpl.addOrUpdateEmploye(employe);
+			
+			boolean testresult;
+			assertEquals(1,EmplSrvImpl.addOrUpdateEmploye(employe));
+			L.log(Level.INFO, () ->"L'employé a été ajouté");
+			
+			
+		} 
+		catch(Exception e) {
+			L.log(Level.ERROR, () ->"Erreur dans l'ajout de l'employé" + e);
+			
+		}
 		
-		when(EmplRepo.save(employe)).thenReturn(employe);
-		EmplSrvImpl.addOrUpdateEmploye(employe);
 		
-		assertEquals(1,EmplSrvImpl.addOrUpdateEmploye(employe));
 	}
 	
 	/*

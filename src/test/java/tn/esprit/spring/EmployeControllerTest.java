@@ -5,12 +5,16 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -30,6 +34,8 @@ import tn.esprit.spring.services.ITimesheetService;
 @WebMvcTest(controllers = RestControlEmploye.class)
 
 public class EmployeControllerTest {
+	
+	private static final Logger L = LogManager.getLogger();
 
 	
 	@MockBean
@@ -64,6 +70,8 @@ public class EmployeControllerTest {
 	public void test_ControgetAllEmployes() throws Exception{
 		
 List<Employe> MesEmployes= new ArrayList<Employe>();
+
+        L.log(Level.DEBUG, () ->"creation de la liste");
 		
 		MesEmployes.add(new Employe(1,"oussama","issaoui","oussama.issaoui1@esprit.tn","passw",true,Role.CHEF_DEPARTEMENT));
 		
@@ -71,7 +79,19 @@ List<Employe> MesEmployes= new ArrayList<Employe>();
 		
 		when(EemplSrv2.getAllEmployes()).thenReturn(MesEmployes);
 		
-		mockmvc.perform(MockMvcRequestBuilders.get("/getAllEmployes")).andExpect(MockMvcResultMatchers.status().isOk());
+		 mockmvc.perform(MockMvcRequestBuilders.get("/getAllEmployes")).andExpect(MockMvcResultMatchers.status().isOk()).andDo(
+				 mvcResult -> {
+					 String json = mvcResult.getResponse().getContentAsString();
+					 
+					 if (json!=null) {
+						 L.log(Level.INFO, () ->"L'API est fonctionnell avec un statut 200:OK et la liste des employés est " + json);
+					 }
+					 else {
+						 L.log(Level.FATAL, () ->"L'API est non fonctionnel");
+					 }
+				 }
+				 );
+		
 		
 		//
 		//status().isOk()
