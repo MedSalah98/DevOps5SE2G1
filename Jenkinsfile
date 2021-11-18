@@ -4,6 +4,9 @@ pipeline {
 
 agent any
 
+        tools {
+        terraform 'terraform'
+    }
 
 stages{
 
@@ -38,46 +41,7 @@ stages{
           }
           }
        
-        stage("Build Docker Image") {
-                steps {
-                script {
-                    
-                       
-                       bat """docker build -t oussamaissaoui/timesheet:1.0 ."""
-                    
-                       }
-                      }
-              }
        
-       
-       stage("Push Image in DockerHub") {
-                steps {
-                script {
-                    
-                       
-                                   withCredentials([string(credentialsId: 'oussamaissaoui', variable: 'dockerHubCred')]) {
-                                       
-                                          bat """docker login -u oussamaissaoui -p ${dockerHubCred}"""
-                                          bat """docker push oussamaissaoui/timesheet:1.0"""
-                                                                             }
-                    
-                       }
-                      }
-              }
-
-       
-         stage("Cleaning docker's local repos") {
-                steps {
-                script {
-                    
-                       
-                                   
-                                          bat """docker rmi oussamaissaoui/timesheet:1.0"""
-                                                                             
-                    
-                       }
-                      }
-              }
 
        
        stage("Terraform Init ") {
