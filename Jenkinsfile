@@ -26,20 +26,7 @@ stages{
           }
           }
        
-       stage("Test,Sonar"){
-          steps{
-             
-          bat """mvn clean verify sonar:sonar -Dsonar.projectKey=Timesheet_devops -Dsonar.host.url=http://localhost:9000 -Dsonar.login=d58be3c78edd2135c0dc3a7e273688e4fb56cc02"""
-          }
-          }
-          
-         
-          
-          stage("Nexus"){
-          steps{
-          bat """mvn deploy"""
-          }
-          }
+     
        
        
 
